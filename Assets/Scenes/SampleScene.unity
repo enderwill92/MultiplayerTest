@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 248560505}
   - component: {fileID: 248560504}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: HostOptionsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -206,6 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 437107309}
+  - component: {fileID: 437107312}
   - component: {fileID: 437107311}
   - component: {fileID: 437107310}
   - component: {fileID: 437107308}
@@ -274,7 +275,7 @@ MonoBehaviour:
   m_CharacterValidation: 0
   m_RegexValue: 
   m_GlobalPointSize: 14
-  m_CharacterLimit: 0
+  m_CharacterLimit: 6
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -319,7 +320,7 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_RichText: 1
-  m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_GlobalFontAsset: {fileID: 11400000, guid: 4c007ed1b8b6f0c4083730d05e2ff1d4, type: 2}
   m_OnFocusSelectAll: 1
   m_ResetOnDeActivation: 1
   m_KeepTextSelectionVisible: 0
@@ -387,6 +388,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437107307}
   m_CullTransparentMesh: 1
+--- !u!114 &437107312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437107307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341d6c64de70f5a418d35a27f2ab7768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ForceUppercaseInputField
+  inputField: {fileID: 437107308}
 --- !u!1 &482395246
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +413,7 @@ GameObject:
   - component: {fileID: 482395249}
   - component: {fileID: 482395248}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: HostDesc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1244,8 +1258,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4c007ed1b8b6f0c4083730d05e2ff1d4, type: 2}
+  m_sharedMaterial: {fileID: 8616618541223497152, guid: 4c007ed1b8b6f0c4083730d05e2ff1d4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1756,10 +1770,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enter text...
+  m_text: Enter Code...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4c007ed1b8b6f0c4083730d05e2ff1d4, type: 2}
+  m_sharedMaterial: {fileID: 8616618541223497152, guid: 4c007ed1b8b6f0c4083730d05e2ff1d4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
