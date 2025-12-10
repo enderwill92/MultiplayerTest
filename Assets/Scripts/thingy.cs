@@ -1,13 +1,18 @@
+using TMPro;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
-using Unity.Services.Core;
 using Unity.Services.Authentication;
+using Unity.Services.Core;
 using Unity.Services.Relay;
 using Unity.Services.Relay.Models;
 using UnityEngine;
 
 public class thingy : MonoBehaviour
 {
+    public string code;
+    public TMP_InputField tmproInputField;
+    public TMP_Text tmproTextField;
+    public GameObject panel;
     async void Start()
     {
         await UnityServices.InitializeAsync();
@@ -24,6 +29,7 @@ public class thingy : MonoBehaviour
 
             string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
             Debug.Log("JOIN CODE: " + joinCode);
+            tmproTextField.text = "HOSTING \nJOIN CODE: " + joinCode;
 
             var transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
             transport.SetRelayServerData(
@@ -35,18 +41,20 @@ public class thingy : MonoBehaviour
             );
 
             NetworkManager.Singleton.StartHost();
+            panel.SetActive(false);
         }
         catch (System.Exception e)
         {
             Debug.LogError(e);
+            tmproTextField.text =""+ e;
         }
     }
 
-    public async void JoinRelay(string joinCode)
+    public async void JoinRelay()
     {
         try
         {
-            JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
+            JoinAllocation allocation = await RelayService.Instance.JoinAllocationAsync(code);
 
             var transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
             transport.SetRelayServerData(
@@ -59,10 +67,18 @@ public class thingy : MonoBehaviour
             );
 
             NetworkManager.Singleton.StartClient();
+            panel.SetActive( false );
+            tmproTextField.text = "CLIENT \nJOIN CODE: " + code;
         }
         catch (System.Exception e)
         {
             Debug.LogError(e);
+            tmproTextField.text = "" + e;
         }
+    }
+
+    public void codeUpdate()
+    {
+        code = tmproInputField.text;
     }
 }

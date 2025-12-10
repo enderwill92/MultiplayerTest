@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 4197929213
+  GlobalObjectIdHash: 3134212119
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -91,6 +91,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   m_PlayerInput: {fileID: 3953647895217992144}
   m_TopDownPlayerController: {fileID: 2321972109521950609}
+  sr: {fileID: 3855766583468944304}
 --- !u!114 &2005502325413232826
 MonoBehaviour:
   m_ObjectHideFlags: 0
