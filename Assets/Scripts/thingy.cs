@@ -42,6 +42,7 @@ public class thingy : MonoBehaviour
 
             NetworkManager.Singleton.StartHost();
             panel.SetActive(false);
+            code = joinCode;
         }
         catch (System.Exception e)
         {
@@ -80,5 +81,11 @@ public class thingy : MonoBehaviour
     public void codeUpdate()
     {
         code = tmproInputField.text;
+    }
+
+    public void copyCode()
+    {
+        GUIUtility.systemCopyBuffer = code;
+        Debug.Log("Text copied to clipboard: " + code);
     }
 }
